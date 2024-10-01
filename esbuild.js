@@ -1,5 +1,5 @@
-import dotenv from "dotenv"
-import esbuild from "esbuild"
+import dotenv from "dotenv";
+import esbuild from "esbuild";
 
 dotenv.config();
 
@@ -12,4 +12,4 @@ const result = await esbuild.build({
   platform: "node",
   write: true,
 });
-console.log("Result was", result)
+console.log("Result was", result);
