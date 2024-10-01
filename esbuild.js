@@ -8,7 +8,6 @@ const result = await esbuild.build({
   bundle: true,
   format: "iife",
   outfile: "build/compiled.js",
-  packages: "external",
   platform: "node",
   write: true,
 });

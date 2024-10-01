@@ -1,0 +1,34 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Tests",
+      "env": {
+        "TZ": "UTC",
+        "NODE_OPTIONS": "--experimental-vm-modules"
+      },
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": [
+          "-i"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "envFile": "${workspaceRoot}/.env",
+      "osx": {
+        "runtimeExecutable": "mise"
+      },
+      "linux": {
+        "runtimeExecutable": "mise"
+      },
+      "runtimeArgs": [
+        "x",
+        "--",
+        "node"
+      ]
+  }
+  ]
+}
