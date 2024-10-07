@@ -32,6 +32,8 @@ The Amplenote Dynamic Templates Plugin allows users to build and insert dynamic 
 
 - Jots seem to be more flaky in Amplenote than notes. The plugin suggestion does not appear consistently unless you type in the jot. And Task expressions don't work for jots yet, because the Task UUIDs get changed without warning in Jot mode
 
+- The plugin has more bloat than I want. It currently rebundles the date and js parsing libraries because Amplenote doesn't expose them. I'm working to see if we can change this and significantly reduce the plugin size.
+
 ## **Usage**
 
 ### **_Important Usage Note_**
@@ -85,15 +87,3 @@ The Amplenote Dynamic Templates Plugin allows users to build and insert dynamic 
 ### **Feedback**
 
 If you have any questions, issues, or feedback, please feel free to reach out!
-
-## Testing
-
-Run `NODE_OPTIONS=--experimental-vm-modules npm test` to run the tests.
-
-If it complains about jsdom being absent, run `npm install -D jest-environment-jsdom` and try again.
-
-### Run tests continuously as modifying the plugin
-
-```bash
-NODE_OPTIONS=--experimental-vm-modules npm run test -- --watch
-```
