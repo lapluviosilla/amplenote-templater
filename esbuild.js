@@ -34,6 +34,9 @@ const result = await esbuild.build({
   outfile: "build/compiled.js",
   platform: "node",
   plugins: [customPlugin],
+  loader: {
+    ".html": "text", // Configure .html files to be loaded as text
+  },
   write: true,
 });
 console.log("Result was", result);

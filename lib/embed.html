@@ -1,0 +1,207 @@
+<html></html>
+<head>
+  <title>Manage Default Templates</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: sans-serif;
+      margin: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    button {
+      margin: 4px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* Light mode styles */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    th, td {
+      border: 1px solid #cccccc;
+    }
+
+    button {
+      background-color: #e0e0e0;
+      color: #000000;
+      border: 1px solid #cccccc;
+    }
+
+    button:hover {
+      background-color: #d5d5d5;
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #1e1e1e;
+        color: #ffffff;
+      }
+
+      th {
+        background-color: #333333;
+      }
+
+      th, td {
+        border: 1px solid #444444;
+      }
+
+      button {
+        background-color: #444444;
+        color: #ffffff;
+        border: 1px solid #555555;
+      }
+
+      button:hover {
+        background-color: #555555;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Manage Default Templates for Tags</h1>
+  <!-- Global Default Template Section -->
+  <section id="globalTemplateSection">
+    <p id="globalTemplateDisplay">No global default template set.</p>
+    <button id="setGlobalTemplateButton">Set</button>
+    <button id="clearGlobalTemplateButton">Clear</button>
+  </section>
+  <table id="mappingsTable">
+    <thead>
+      <tr>
+        <th>Tag</th>
+        <th>Template Note</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be populated dynamically -->
+    </tbody>
+  </table>
+  <button id="addMappingButton">Add Default</button>
+  <script>
+    // JavaScript code to manage the UI and interactions
+
+    // Function to refresh the table
+    async function refreshMappings() {
+      const mappings = await getMappings();
+      const tbody = document.querySelector('#mappingsTable tbody');
+      tbody.innerHTML = '';
+      for (const tag in mappings) {
+        const template = mappings[tag];
+        const tr = document.createElement('tr');
+        const tagTd = document.createElement('td');
+        tagTd.textContent = tag;
+        const templateTd = document.createElement('td');
+        templateTd.textContent = template.name || '(Note not found)';
+        const actionsTd = document.createElement('td');
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', () => editMapping(tag));
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => deleteMapping(tag));
+        actionsTd.appendChild(editButton);
+        actionsTd.appendChild(deleteButton);
+        tr.appendChild(tagTd);
+        tr.appendChild(templateTd);
+        tr.appendChild(actionsTd);
+        tbody.appendChild(tr);
+      }
+    }
+
+    // Function to get mappings from plugin
+    async function getMappings() {
+      const mappings = await window.callAmplenotePlugin('getMappings');
+      return mappings || {};
+    }
+
+    // Function to add a new mapping
+    async function addMapping() {
+      const result = await window.callAmplenotePlugin('addMapping');
+      if (result) {
+        await refreshMappings();
+      }
+    }
+
+    // Function to edit a mapping
+    async function editMapping(tag) {
+      const result = await window.callAmplenotePlugin('editMapping', tag);
+      if (result) {
+        await refreshMappings();
+      }
+    }
+
+    // Function to delete a mapping
+    async function deleteMapping(tag) {
+      const confirmed = await window.callAmplenotePlugin('confirmDelete', tag);
+      console.log(confirmed);
+      if (confirmed == -1) {
+        await window.callAmplenotePlugin('deleteMapping', tag);
+        await refreshMappings();
+      }
+    }
+
+    document.getElementById('addMappingButton').addEventListener('click', addMapping);
+
+    // // Initialize the table
+    // refreshMappings();
+
+    // Function to refresh the global template display
+    async function refreshGlobalTemplate() {
+      const globalTemplate = await window.callAmplenotePlugin('getGlobalTemplate');
+      const displayElement = document.getElementById('globalTemplateDisplay');
+      if (globalTemplate && globalTemplate.name) {
+        displayElement.textContent = "Current Global Template: " + globalTemplate.name;
+      } else {
+        displayElement.textContent = 'No global default template set.';
+      }
+    }
+
+    // Function to set the global default template
+    async function setGlobalTemplate() {
+      const result = await window.callAmplenotePlugin('setGlobalTemplate');
+      if (result) {
+        await refreshGlobalTemplate();
+      }
+    }
+
+    // Function to clear the global default template
+    async function clearGlobalTemplate() {
+      await window.callAmplenotePlugin('clearGlobalTemplate');
+      await refreshGlobalTemplate();
+    }
+
+    // Event listeners for global template buttons
+    document.getElementById('setGlobalTemplateButton').addEventListener('click', setGlobalTemplate);
+    document.getElementById('clearGlobalTemplateButton').addEventListener('click', clearGlobalTemplate);
+
+    // Modify the existing refresh function to also refresh global template
+    async function refreshAll() {
+      await refreshGlobalTemplate();
+      await refreshMappings();
+    }
+
+    // Initialize the embed
+    refreshAll();
+  </script>
+</body>
+</html>
