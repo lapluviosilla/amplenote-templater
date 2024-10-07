@@ -80,7 +80,7 @@ The Amplenote Dynamic Templates Plugin allows users to build and insert dynamic 
 
 **Date**: October 3rd, 2024
 
-**Last Updated**: October 3rd, 2024
+**Last Updated**: October 7th, 2024
 
 ### **Feedback**
 
