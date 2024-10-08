@@ -4,6 +4,7 @@
     "dotenv": "^16.0.3",
     "esbuild": "0.17.15",
     "esprima": "^4.0.1",
+    "html-minifier-terser": "^7.2.0",
     "isomorphic-fetch": "^3.0.0"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@ import esbuild from "esbuild";
 import fs from "fs";
 // import { promises as fsp } from "fs";
 import path from "path";
+import { minify } from "html-minifier-terser";
 
 dotenv.config();
 
@@ -33,6 +34,37 @@ const modifyBeforeMinifyPlugin = {
 
       // Write the modified output back to the file system
       fs.writeFileSync(outfilePath, modifiedOutput);
+    });
+  },
+};
+
+// Custom plugin to minify HTML files using html-minifier-terser
+const htmlLoaderPlugin = {
+  name: "html-loader",
+  setup(build) {
+    build.onLoad({ filter: /\.html$/ }, async (args) => {
+      let source = await fs.promises.readFile(args.path, "utf8");
+
+      const isMinify = build.initialOptions.minify;
+
+      // Comment minification to debug
+      //if (isMinify) {
+      // Minify the HTML content using html-minifier-terser
+      source = await minify(source, {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeEmptyAttributes: true,
+        minifyCSS: true,
+        minifyJS: true,
+        // Add other minification options as needed
+      });
+      //}
+
+      return {
+        contents: `export default ${JSON.stringify(source)};`,
+        loader: "js",
+      };
     });
   },
 };
@@ -79,15 +111,12 @@ async function buildAndGenerateMarkdown() {
     format: "iife",
     outfile: outfile,
     platform: "node",
-    plugins: [modifyBeforeMinifyPlugin],
+    plugins: [htmlLoaderPlugin, modifyBeforeMinifyPlugin],
     loader: {
-      ".html": "text",
+      ".html": "js",
     },
     minify: false,
     write: true,
-    // footer: {
-    //   js: "return plugin;", // Add this line
-    // },
   });
 
   console.log(`Build completed for ${outfile}`);

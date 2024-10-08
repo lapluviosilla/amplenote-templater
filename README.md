@@ -1,6 +1,8 @@
-## **Amplenote Dynamic Templates Plugin Overview**
+## **Amplenote Dynamic Templater Plugin Overview**
 
-The Amplenote Dynamic Templates Plugin allows users to build and insert dynamic templates seamlessly within Amplenote. With this plugin, you can expand date expressions, customize date formats, create note links, and automate template insertion based on your current context. This tool enhances productivity and streamlines your note-taking process.
+The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic templates seamlessly within Amplenote. With this plugin, you can expand date expressions, customize date formats, create note links, and automate template insertion based on your current context. This tool enhances productivity and streamlines your note-taking process.
+
+☕ If the plugin is helpful to you, you can [buy me a coffee](https://ko-fi.com/lapluviosilla)!
 
 ## **Features**
 
