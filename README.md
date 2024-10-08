@@ -18,7 +18,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets into links.
 
-  - Example: \[\[daily-notes/Next Monday\]\] creates or links to the daily note for next monday
+  - Example: \[\[daily-notes/{Next Monday}\]\] creates or links to the daily note for next monday
 
   - Supports auto-creating notes: \[\[daily-jots/January 2nd, 2025\]\] creates a note with the specified tag if it doesn’t already exist.
 
@@ -44,9 +44,9 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 ### **Inserting a Template**
 
-1\. Type {= to insert default templates or {=Pick a template} to pull up a menu to select an available template
+1. Type {= to insert default templates or {=Pick a template} to pull up a menu to select an available template
 
-2\. The plugin will automatically insert the template’s contents at the current cursor position.
+2. The plugin will automatically insert the template’s contents at the current cursor position.
 
 ### **Task Start/Hide Dates**
 
@@ -66,7 +66,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - Notes will be created if they do not exist.
 
-- Example: \[\[daily-jots/Next Sunday\]\] links to (and creates) a note tagged with “daily-jots” for next week.
+- Example: \[\[daily-jots/{Next Sunday}\]\] links to (and creates) a note tagged with “daily-jots” for next week.
 
 ### **Assigning Default Templates**
 
