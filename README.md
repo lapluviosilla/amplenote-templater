@@ -57,3 +57,5 @@ Once your plugin is ready to test within Amplenote, you can build and test it wi
 3. Commit the resulting file (default location: `build/compiled.js`) to your git repo (e.g., `git add build/compiled.js && git commit -m "Compiled plugin"`)
 4. Push your changes to GitHub (`git push`)
 5. Choose "Github Plugin Builder: Refresh" from the note options menu in your plugin note
+
+Alternatively, you can copy/paste the output markdown build (`plugin.md` or `plugin.min.md`) into your plugin note file using the [Markdown plugin](https://www.amplenote.com/plugins/KKfwtmMVtoxSCdsK5bNdnad8)
