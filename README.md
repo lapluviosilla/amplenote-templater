@@ -8,6 +8,8 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Dynamic Template Insertion**: Build and insert templates dynamically at your current cursor position using the {= syntax, which mimics the native template support (@= or \[\[=).
 
+- **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
+
 - **Date and Math Expression Expansion**: Automatically expand recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
   - Supports Amplenote expressions listed [here](https://www.amplenote.com/help/calculations)
@@ -24,9 +26,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Smart Indentation**: Insert templates while maintaining the current indentation level within bullet, numbered, or task lists.
 
-  - Note: This works as long as the template itself contains a list. Since headings and other content isn't indent-able those won't maintain current indentation.
-
-- **Default Template Assignment**: Assign default templates to specific tags or for new notes.
+  - Note: This works as long as the template itself contains a list. Since headings and other content aren't indent-able those won't maintain current indentation.
 
 - **Jot Suggestions:** This functionality enhances the user experience in Jots mode.
 
@@ -40,7 +40,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 ### **_Important Usage Note_**
 
-- The plugin requires dynamic templates to be tagged with a particular pre-set tag. By default, this tag is `system/template`, but it is a user-configurable setting under the plugin settings labeled **Dynamic Template Tag**.
+- Certain convenience features of the plugin require dynamic templates to be tagged with a particular pre-set tag. By default, this tag is `system/template`, but it is a user-configurable setting under the plugin settings labeled **Dynamic Template Tag**. This is optional, most of the plugin functionality works without it.
 
 ### **Inserting a Template**
 
@@ -72,9 +72,11 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - For the default configuration:
 
-  - A global default can be set by going to the note and using the **Templater: Set Default Template** menu.
+  - Use the Tag Default Manager with the "Templater: Manage Defaults" menu under Cmd/Ctrl-O. _Note: This opens a sidebar menu, which only works on desktop not mobile._
 
-  - At the tag level, you can make a template the default for a tag by tagging it with that tag. For example, a template could have both system/template and project tags to make it the default dynamic template for project notes. A configuration menu to set specific defaults will also be added.
+  - A global or tag default can also be set by going to the note and using the **Templater: Set Default Template** menu. (Menu won't appear if template isn't tagged with dynamic template tag)
+
+  - At the tag level, you can make a template the default for a tag by tagging it with that tag and the dynamic template tag. For example, a template could have both `system/template` and `project` tags to make it the default dynamic template for project notes.
 
 - Assign templates to tags to receive a Jot Suggestion when visiting that tag in Jots mode.
 
@@ -84,7 +86,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 **Date**: October 3rd, 2024
 
-**Last Updated**: October 7th, 2024
+**Last Updated**: October 10th, 2024
 
 ### **Feedback**
 
