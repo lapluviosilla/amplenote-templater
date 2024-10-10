@@ -3,6 +3,10 @@
 In this section you can provide some details about the [Amplenote plugin](https://www.amplenote.com/help/developing_amplenote_plugins) 
 that this repo will implement.
 
+## Build Configuration
+
+Put your plugin readme in `PLUGIN_README.md` and configure your plugin details in `plugin.json`
+
 ## Installation
 
 1. Clone this repo. `git clone git@github.com:alloy-org/plugin-template.git`
