@@ -17,7 +17,7 @@
     "wait-for-expect": "^3.0.2"
   },
   "main": "lib/plugin.js",
-  "name": "plugin-template",
+  "name": "amplenote-plugin-templater",
   "scripts": {
     "build": "node esbuild.js",
     "test": "TZ='UTC' NODE_OPTIONS=--experimental-vm-modules jest"
