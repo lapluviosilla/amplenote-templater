@@ -1,6 +1,6 @@
 /** The config file for your plugin
- * The version and sourceRepo parameters are optional, they will be output in your plugin
- * setting is an array of all your Settings, but you can remove the key if your plugin doesn't have any settings.
+ * The version and sourceRepo parameters are optional, they will be output in your plugin if included
+ * setting is an array of all your Settings, but you can leave it as an empty array if you don't have any settings.
  */
 export default {
   name: "Dynamic Templater",
@@ -15,6 +15,10 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 - **Dynamic Template Insertion**: Build and insert templates dynamically at your current cursor position using the {= syntax, which mimics the native template support (@= or \[\[=).
 
 - **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
+
+- **Create by Dynamic Template**: Use a link to create a new note with a dynamic template. \
+Now when you have ["new note" links](https://www.amplenote.com/help/using_note_templates#Creating_a_gallery_of_templates_using_the__new_note__link) as described in the Amplenote docs, \
+there will be a "Dynamic Templater" button that lets you create it while parsing the template as a dynamic template.
 
 - **Date and Math Expression Expansion**: Automatically expand complex recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
