@@ -12,7 +12,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
 
-- **Create by Dynamic Template**: Use a link to create a new note with a dynamic template. Now when you have ["new note" links](https://www.amplenote.com/help/using_note_templates#Creating_a_gallery_of_templates_using_the__new_note__link) as described in the Amplenote docs, there will be a "Dynamic Templater" button that lets you create it while parsing the template as a dynamic template.
+- **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name.
 
 - **Date and Math Expression Expansion**: Automatically expand complex recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
@@ -59,6 +59,14 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 1. Type {= to insert default templates or {=Pick a template} to pull up a menu to select an available template
 
 2. The plugin will automatically insert the template’s contents at the current cursor position.
+
+### **Creating a Dynamic New Note Link**
+
+Two ways to create a dynamic new note link:
+
+1. Use the {Templater: New Note Link} expression to bring up a form to generate the link.
+
+2. Now when you have ["new note" links](https://www.amplenote.com/help/using_note_templates#Creating_a_gallery_of_templates_using_the__new_note__link) as described in the Amplenote docs, there will be a "Dynamic Templater: Create" button that lets you create it while parsing the template as a dynamic template.
 
 ### **Task Start/Hide Dates**
 

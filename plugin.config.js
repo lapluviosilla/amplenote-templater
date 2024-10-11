@@ -16,9 +16,7 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 
 - **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
 
-- **Create by Dynamic Template**: Use a link to create a new note with a dynamic template. \
-Now when you have ["new note" links](https://www.amplenote.com/help/using_note_templates#Creating_a_gallery_of_templates_using_the__new_note__link) as described in the Amplenote docs, \
-there will be a "Dynamic Templater" button that lets you create it while parsing the template as a dynamic template.
+- **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name.
 
 - **Date and Math Expression Expansion**: Automatically expand complex recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
