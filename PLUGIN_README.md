@@ -10,9 +10,17 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
 
-- **Date and Math Expression Expansion**: Automatically expand recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
+- **Date and Math Expression Expansion**: Automatically expand complex recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
   - Supports Amplenote expressions listed [here](https://www.amplenote.com/help/calculations)
+
+  - **Supports advanced expressions and compound expressions like**:
+
+    - {2 days before the Last Weekday of Four Months from Now at 5pm}
+
+    - {2 Weeks after Friday}
+
+    - {Thursday of Last Week}
 
 - **Task Start/Hide Dates**: Apply dynamic start or hide dates to tasks using expressions like {start:expression} or {hide:expression}. Like {start:next Monday}.
 
@@ -62,7 +70,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 ### **Linking Notes**
 
-- Use double square brackets to create or link to notes
+- Use double square brackets to create or link to notes. You can also link to sections by adding '#'.
 
 - Notes will be created if they do not exist.
 
@@ -91,3 +99,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 ### **Feedback**
 
 If you have any questions, issues, or feedback, please feel free to reach out!
+
+## Changelog
+
+- October 10th, 2024 -- Added compound date expressions
