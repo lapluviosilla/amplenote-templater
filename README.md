@@ -28,6 +28,8 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
     - {Thursday of Last Week}
 
+  - Full list of supported expressions listed here: [Evaluator Supported Date and Math Expressions](https://github.com/lapluviosilla/amplenote-templater/blob/main/EVALUATOR_SUPPORT.md)
+
 - **Task Start/Hide Dates**: Apply dynamic start or hide dates to tasks using expressions like {start:expression} or {hide:expression}. Like {start:next Monday}.
 
 - **Custom Date Formatting**: Customize the format of dates using specifiers. For example, {"MM-dd-yyyy":tomorrow} expands to “09-27-2024”.
@@ -79,7 +81,7 @@ Two ways to create a dynamic new note link:
 
 - Add a date format specifier to expressions for customized date formats. Here are all the date formats supported: [date-fns Formats](https://date-fns.org/docs/format)
 
-- Example: {"mm-dd-YYYY":tomorrow} expands to “09-27-2024”.
+- Example: {"MM-dd-yyyy":tomorrow} expands to “09-27-2024”.
 
 ### **Linking Notes**
 

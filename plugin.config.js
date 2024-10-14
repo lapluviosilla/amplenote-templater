@@ -32,6 +32,8 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 
     - {Thursday of Last Week}
 
+  - Full list of supported expressions listed here: [Evaluator Supported Date and Math Expressions](https://github.com/lapluviosilla/amplenote-templater/blob/main/EVALUATOR_SUPPORT.md)
+
 - **Task Start/Hide Dates**: Apply dynamic start or hide dates to tasks using expressions like {start:expression} or {hide:expression}. Like {start:next Monday}.
 
 - **Custom Date Formatting**: Customize the format of dates using specifiers. For example, {"MM-dd-yyyy":tomorrow} expands to “09-27-2024”.
