@@ -32,11 +32,10 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Custom Date Formatting**: Customize the format of dates using specifiers. For example, {"MM-dd-yyyy":tomorrow} expands to “09-27-2024”.
 
-- **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets into links.
+- **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets like `[[daily-notes/{Next Monday}]]` into links.
 
-  - Example: \[\[daily-notes/{Next Monday}\]\] creates or links to the daily note for next monday
-
-  - Supports auto-creating notes: \[\[daily-jots/January 2nd, 2025\]\] creates a note with the specified tag if it doesn’t already exist.
+  - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (`?`).
+  - **Display Name with Pipe Character** (\*\***`|`**\*\*\*): Use the pipe character to set an alias or display name for the link.
 
 - **Smart Indentation**: Insert templates while maintaining the current indentation level within bullet, numbered, or task lists.
 
@@ -84,11 +83,19 @@ Two ways to create a dynamic new note link:
 
 ### **Linking Notes**
 
-- Use double square brackets to create or link to notes. You can also link to sections by adding '#'.
+- Use double square brackets (`[[ ]]`) to create or link to notes. You can have date/math expressions in the link. You can also link to specific sections within a note by adding `#` followed by the section name.
+- By default, notes will be created if they do not exist, unless you add an optional flag (`?`) at the beginning of the note. The optional flag allows you to link to the note only if it exists, avoiding the creation of empty notes.
+- You can also use an alias to display a different name for the link by using the pipe character (`|`) at the end.
 
-- Notes will be created if they do not exist.
+**Examples**:
 
-- Example: \[\[daily-jots/{Next Sunday}\]\] links to (and creates) a note tagged with “daily-jots” for next week.
+- `[[daily-jots/{Next Sunday}]]` links to (and creates, if necessary) a note tagged with "daily-jots" for next sunday.
+
+- `[[?daily-jots/{Monday of last week}]]` links to a note tagged with "daily-jots" for "Monday of last week" if it exists; otherwise, it will remain as plain text (e.g., `[[daily-jots/September 9th, 2024]]`). This allows you to create/link the note at a later time or remove it entirely using Amplenote's native interface.
+
+- `[[Dynamic Note Name|Custom Display]]` links to "Dynamic Note Name" but displays "Custom Display" as the clickable text.
+
+- `[[{Tomorrow}#Section|Custom Display]]` links to the "Section" of "Tomorrow" while showing "Custom Display" as the clickable text.
 
 ### **Assigning Default Templates**
 
@@ -108,13 +115,15 @@ Two ways to create a dynamic new note link:
 
 **Date**: October 3rd, 2024
 
-**Last Updated**: October 10th, 2024
+**Last Updated**: October 14th, 2024
 
 ### **Feedback**
 
 If you have any questions, issues, or feedback, please feel free to reach out!
 
 ## Changelog
+
+- October 14th, 2024 -- Added optional flag and display name feature for dynamic note linking
 
 - October 11th, 2024 -- Added note create link dynamic template support
 

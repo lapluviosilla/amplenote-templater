@@ -36,11 +36,10 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 
 - **Custom Date Formatting**: Customize the format of dates using specifiers. For example, {"MM-dd-yyyy":tomorrow} expands to “09-27-2024”.
 
-- **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets into links.
+- **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets like \`[[daily-notes/{Next Monday}]]\` into links.
 
-  - Example: \[\[daily-notes/{Next Monday}\]\] creates or links to the daily note for next monday
-
-  - Supports auto-creating notes: \[\[daily-jots/January 2nd, 2025\]\] creates a note with the specified tag if it doesn’t already exist.
+  - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (\`?\`).
+  - **Display Name with Pipe Character** (\*\***\|**\*\*\*): Use the pipe character to set an alias or display name for the link.
 
 - **Smart Indentation**: Insert templates while maintaining the current indentation level within bullet, numbered, or task lists.
 
