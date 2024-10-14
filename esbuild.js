@@ -143,15 +143,23 @@ const amplenoteifyPlugin = {
  * @param {String} compiledCode
  * @param {String} markdownFile Target file name
  */
-async function generateMarkdownFile(compiledCode, markdownFile) {
+async function generateMarkdownFile(compiledCode, markdownFile, dev = false) {
   try {
     // Read the contents of README.md and plugin.config.js
     const readmeContent = fs.readFileSync(README_FILE, "utf-8");
 
-    const { name, description, version, sourceRepo, icon, instructions, setting } = pluginConfig;
+    const { description, version, sourceRepo, icon, instructions, setting } = pluginConfig;
+
+    const pluginName = dev ? pluginConfig.devName : pluginConfig.name;
 
     // Prepare metadata table from plugin config using only relevant parameters
-    const metadataTable = jsonToMetadataTable({ name, description, icon, instructions, setting });
+    const metadataTable = jsonToMetadataTable({
+      pluginName,
+      description,
+      icon,
+      instructions,
+      setting,
+    });
 
     // Prepare the compiled code block
     const compiledCodeBlock = "```js\n" + compiledCode + "\n```";
@@ -159,7 +167,7 @@ async function generateMarkdownFile(compiledCode, markdownFile) {
     // Concatenate all parts
     const outputContent = `${readmeContent}
 
-# ${name}${version ? " (" + version + ")" : ""}
+# ${pluginName}${version ? " (" + version + ")" : ""}
     
 ${metadataTable}
 
@@ -236,7 +244,7 @@ async function buildAndGenerateMarkdown() {
   const compiledCode = fs.readFileSync(outfile, "utf-8");
 
   // Generate the unminified markdown file
-  await generateMarkdownFile(compiledCode, markdownFile);
+  await generateMarkdownFile(compiledCode, markdownFile, true);
 
   // Minify the code using esbuild.transform
   const minifiedResult = await esbuild.transform(compiledCode, {

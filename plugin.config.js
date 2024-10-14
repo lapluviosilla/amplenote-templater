@@ -4,6 +4,7 @@
  */
 export default {
   name: "Dynamic Templater",
+  devName: "Dynamic Templater Dev",
   description: "A plugin to make templates more powerful and dynamic",
   icon: "auto_awesome_mosaic",
   version: "1.0.0",
