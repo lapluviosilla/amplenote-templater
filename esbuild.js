@@ -154,7 +154,7 @@ async function generateMarkdownFile(compiledCode, markdownFile, dev = false) {
 
     // Prepare metadata table from plugin config using only relevant parameters
     const metadataTable = jsonToMetadataTable({
-      pluginName,
+      name: pluginName,
       description,
       icon,
       instructions,
