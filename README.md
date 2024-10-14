@@ -1,10 +1,10 @@
 # **Amplenote Dynamic Templater Plugin Overview**
 
 The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic templates seamlessly within Amplenote. With this plugin, you can expand date expressions, customize date formats, create note links, and automate template insertion based on your current context. This tool enhances productivity and streamlines your note-taking process.
-
+<br/>**Watch the** [**Overview Video**](https://youtu.be/WSwXS2kQAmA)<br/>
 ![](https://raw.githubusercontent.com/lapluviosilla/amplenote-templater/cbe0368cb4bfb2ee026ae371ad411a543f4b9f6d/media/plugin_overview.gif)
 
-☕ If the plugin is helpful to you, you can [buy me a coffee](https://ko-fi.com/lapluviosilla)!
+<br/>☕ If the plugin is helpful to you, you can [buy me a coffee](https://ko-fi.com/lapluviosilla)!
 
 ## **Features**
 
@@ -14,7 +14,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name.
 
-![](https://raw.githubusercontent.com/lapluviosilla/amplenote-templater/72b91e0af5d410c7a3e5d1d6ac53e04b4f330f8b/media/newdynamicnotebutton_screen.png)
+![newdynamicnotebutton_screen.png|500](https://raw.githubusercontent.com/lapluviosilla/amplenote-templater/72b91e0af5d410c7a3e5d1d6ac53e04b4f330f8b/media/newdynamicnotebutton_screen.png)
 
 - **Date and Math Expression Expansion**: Automatically expand complex recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
@@ -78,7 +78,7 @@ Two ways to create a dynamic new note link:
 
 ### **Custom Date Formatting**
 
-- Add a date format specifier to expressions for customized date formats.
+- Add a date format specifier to expressions for customized date formats. Here are all the date formats supported: [date-fns Formats](https://date-fns.org/docs/format)
 
 - Example: {"mm-dd-YYYY":tomorrow} expands to “09-27-2024”.
 
