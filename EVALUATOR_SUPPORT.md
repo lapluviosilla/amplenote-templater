@@ -59,7 +59,7 @@ Relative date expressions can use keywords like "Next", "Last", or specific time
   - `{Friday of Last Week}`: Finds the specified day relative to last week.
 
 - **Duration-Based Expressions**
-  - `{In 14 days}`, `{A month ago}`, `{In -3 days}`: Evaluates to the given duration relative to today.
+  - `{In 14 days}`, `{A month ago}`, `{In -3 days}`, `{In Twenty Four Hours}`: Evaluates to the given duration relative to today.
   - `{End of next month}`, `{Last Weekday of Last Month}`: Evaluates based on the relative month or week.
 
 ## Time Expressions

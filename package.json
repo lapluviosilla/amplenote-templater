@@ -20,7 +20,8 @@
   "name": "amplenote-plugin-templater",
   "scripts": {
     "build": "node esbuild.js",
-    "test": "TZ='UTC' NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "TZ='UTC' NODE_OPTIONS=--experimental-vm-modules jest",
+    "coverage": "TZ='UTC' NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "testEnvironment": "jsdom",
   "type": "module",
