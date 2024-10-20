@@ -117,13 +117,15 @@ Two ways to create a dynamic new note link:
 
 **Date**: October 3rd, 2024
 
-**Last Updated**: October 14th, 2024
+**Last Updated**: October 19th, 2024
 
 ### **Feedback**
 
 If you have any questions, issues, or feedback, please feel free to reach out!
 
 ## Changelog
+
+- October 19th, 2024 -- Fixed a couple bugs
 
 - October 14th, 2024 -- Added optional flag and display name feature for dynamic note linking
 
