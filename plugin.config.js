@@ -7,7 +7,7 @@ export default {
   devName: "Dynamic Templater Dev",
   description: "A plugin to make templates more powerful and dynamic",
   icon: "auto_awesome_mosaic",
-  version: "1.0.0",
+  version: "1.1",
   sourceRepo: "https://github.com/lapluviosilla/amplenote-templater", // This is optional and can be removed
   instructions: `![](https://raw.githubusercontent.com/lapluviosilla/amplenote-templater/cbe0368cb4bfb2ee026ae371ad411a543f4b9f6d/media/plugin_overview.gif)
 <br/>**Watch the** [**Overview Video**](https://youtu.be/WSwXS2kQAmA)<br/>
