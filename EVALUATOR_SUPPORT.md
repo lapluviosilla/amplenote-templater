@@ -44,7 +44,7 @@ Date expressions can be included using specific keywords or phrases in curly bra
 - **Days of the Week**
 
   - `{Monday}`, `{Sunday}`, `{Thursday}`: Evaluates to the corresponding day in the current week.
-  - `{First Monday of September}` or `{Last Friday of December}`: Evaluates to the specified weekday in the given month.
+  - `{First Monday of September}` or `{Second Wednesday of Last Month}` or `{Last Friday of December}`: Evaluates to the specified weekday in the given month.
 
 - **Months of the Year**
   - `{September}`, `{October}`, `{January}`: Evaluates to the first day of the specified month in the current year.
