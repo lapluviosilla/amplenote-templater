@@ -12,7 +12,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
 
-- **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name.
+- **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name and specifying a template section to use.
 
 ![newdynamicnotebutton_screen.png|500](https://raw.githubusercontent.com/lapluviosilla/amplenote-templater/72b91e0af5d410c7a3e5d1d6ac53e04b4f330f8b/media/newdynamicnotebutton_screen.png)
 
@@ -38,6 +38,8 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
   - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (`?`).
   - **Display Name with Pipe Character** (\*\***`|`**\*\*\*): Use the pipe character to set an alias or display name for the link.
+
+- **Nested Templates**: You can link to and nest templates within each other with `[[= ]]` or `{= }`. You can also insert a subsection of a template.
 
 - **Smart Indentation**: Insert templates while maintaining the current indentation level within bullet, numbered, or task lists.
 
@@ -99,6 +101,20 @@ Two ways to create a dynamic new note link:
 
 - `[[{Tomorrow}#Section|Custom Display]]` links to the "Section" of "Tomorrow" while showing "Custom Display" as the clickable text.
 
+### **Nested Templates**
+
+- Use template links (`[[= ]]` or `{= }`, they are interchangeable) within your dynamic templates to nest other templates.
+
+- You can specify a subsection of a template to use for insertion with `#` or `#>`. The `#` includes the section header, and the `#>` only uses the section inner content.
+
+**Examples**:
+
+- `{=project/Projects}` inserts the Projects note as a template
+
+- `[[=project/Project Dashboard#Active Projects]]` inserts the Active Projects section of the Projects note
+
+- `[[=daily-templates/{"EEEE":Today}#>Tasks]]` inserts the content under the tasks section of the template for the day of the week
+
 ### **Assigning Default Templates**
 
 - For the default configuration:
@@ -117,13 +133,15 @@ Two ways to create a dynamic new note link:
 
 **Date**: October 3rd, 2024
 
-**Last Updated**: October 19th, 2024
+**Last Updated**: October 22nd, 2024
 
 ### **Feedback**
 
 If you have any questions, issues, or feedback, please feel free to reach out!
 
 ## Changelog
+
+- October 22nd, 2024 -- Added nested templates and template section extraction features
 
 - October 19th, 2024 -- Fixed a couple bugs
 

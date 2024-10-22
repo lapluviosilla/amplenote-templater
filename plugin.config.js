@@ -18,7 +18,7 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 
 - **Default Template Assignment**: Assign default templates to specific tags or for new notes. These templates will be suggested when inserting a template with {=
 
-- **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name.
+- **Dynamic New Note Link/Button**: Use a link/button to auto-create a new note with a dynamic template. This also supports expressions in the note name and specifying a template section to use.
 
 - **Date and Math Expression Expansion**: Automatically expand complex recognized date and math expressions within curly brackets, such as {tomorrow} or {1+8}
 
@@ -42,6 +42,8 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 
   - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (\`?\`).
   - **Display Name with Pipe Character** (\*\***\|**\*\*\*): Use the pipe character to set an alias or display name for the link.
+
+- **Nested Templates**: You can link to and nest templates within each other with [[= ]] or {= }. You can also insert a subsection of a template.
 
 - **Smart Indentation**: Insert templates while maintaining the current indentation level within bullet, numbered, or task lists.
 
