@@ -11,10 +11,10 @@ Math expressions can be included using curly braces `{}` and can contain operati
   - Example: `{1+1}`, `{12-3-1}`
   - Result: `2`, `8`
 
-- **Multiplication, Division, and Exponentiation**
+- **Multiplication, Division, Remainder and Exponentiation**
 
-  - Example: `{pi * 10 ** 2}`, `{(1+1) * (12/36)}`
-  - Result: `314.159...`, `0.666...`
+  - Example: `{pi * 10 ** 2}`, `{(1+1) * (12/36)}`, `{13 % 5}`
+  - Result: `314.159...`, `0.666...`, `3`
 
 - **Whitespace Handling**
   - Whitespace is ignored.
