@@ -36,7 +36,7 @@ The Amplenote Dynamic Templater Plugin allows users to build and insert dynamic 
 
 - **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets like `[[daily-notes/{Next Monday}]]` into links.
 
-  - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (`?`).
+  - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (`?`) or silent flag (`_`).
   - **Display Name with Pipe Character** (\*\***`|`**\*\*\*): Use the pipe character to set an alias or display name for the link.
 
 - **Nested Templates**: You can link to and nest templates within each other with `[[= ]]` or `{= }`. You can also insert a subsection of a template.
@@ -89,6 +89,7 @@ Two ways to create a dynamic new note link:
 
 - Use double square brackets (`[[ ]]`) to create or link to notes. You can have date/math expressions in the link. You can also link to specific sections within a note by adding `#` followed by the section name.
 - By default, notes will be created if they do not exist, unless you add an optional flag (`?`) at the beginning of the note. The optional flag allows you to link to the note only if it exists, avoiding the creation of empty notes.
+- You can also use a silent flag (`_`) to surpress the link output completely if the note doesn't exist. It's a optional flag that doesn't output anything.
 - You can also use an alias to display a different name for the link by using the pipe character (`|`) at the end.
 
 **Examples**:

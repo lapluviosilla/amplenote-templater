@@ -40,7 +40,7 @@ View the [README on Github](https://github.com/lapluviosilla/amplenote-templater
 
 - **Dynamic Note Linking**: Convert eligible text enclosed in double square brackets like \`[[daily-notes/{Next Monday}]]\` into links.
 
-  - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (\`?\`).
+  - **Auto-Creating Notes**: Notes are created if they don't already exist. This can be suppressed with an optional prefix flag (\`?\`) or silent flag (\`_\`).
   - **Display Name with Pipe Character** (\*\***\|**\*\*\*): Use the pipe character to set an alias or display name for the link.
 
 - **Nested Templates**: You can link to and nest templates within each other with [[= ]] or {= }. You can also insert a subsection of a template.
